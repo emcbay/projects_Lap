@@ -1,26 +1,3 @@
-addition = "+"
-subtraktion = "-"
-multiplikation = "*"
-division = "/"
-
-while True:
-    try:
-        first_number = int(input("Please type in a number: "))
-        second_number = int(input("Please type in a number: "))
-        break
-    except ValueError:
-        print("Bitte eine Zahl eingeben")
-
-grundrechenart = input("Please type addition, subtraktion, multiplikation or division: ")
-
-if "addition" in grundrechenart:
-    print(first_number + second_number)
-elif "subtraktion" in grundrechenart:
-    print(first_number - second_number)
-elif "multiplikation" in grundrechenart:
-    print(first_number * second_number)
-elif "division" in grundrechenart:
-    if second_number == 0:
-        print("warum du durch 0 teilen")
-    else:
-        print(first_number / second_number)
+calculation = input("Enter your calculation: ")
+print("Result:", eval(calculation))
+# This is a basic calculator that takes a mathematical expression as input and evaluates it.
