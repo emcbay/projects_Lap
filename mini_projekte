@@ -1,0 +1,47 @@
+noten_projekt = "Notenverwaltung"
+lotto_projekt = "Lotto-Tipp"
+
+def main():
+        #Projekt 01: Notenverwaltung
+        while True:
+                projekt_wahl = input("Welches Projekt möchten Sie ausführen? (1 für Notenverwaltung, 2 für Lotto-Tipp, 3 für Exit): ")
+                if projekt_wahl == "1":
+                        print("\n--- Notenverwaltung ---")
+                        #a
+                        noten_eingabe = input("Bitte geben Sie die Noten ein (durch Kommas getrennt): ")
+                        noten_liste = noten_eingabe.split(",")
+                        print("Der Durchschnitt der Noten ist", (sum([float(note) for note in noten_liste]) // len(noten_liste)))
+                        #b
+                        print("Die höchsten und niedrigsten Noten sind:", max([float(note) for note in noten_liste]), "und", min([float(note) for note in noten_liste]))
+
+                        #c
+                        noten_liste.sort()
+                        print("Die Noten sind aufsteigend sortiert:", noten_liste)
+
+                        #d
+                        print("die drei besten Noten sind:",noten_liste[-3:])
+                elif projekt_wahl == "2":
+        #Projekt 02: Lotto-Tipp
+                        print("\n--- Lotto-Tipp ---")
+                        import random
+                        lotto_zahlen = random.sample(range(1, 43), 6)
+                        try:
+                                lotto_eingabe = input("Bitte geben Sie Ihre 6 Lottozahlen ein (1-42) durch Kommas getrennt: ")
+                                lotto_tipp = [int(zahl) for zahl in lotto_eingabe.split(",")]
+                        except ValueError:
+                                print("Ungültige Eingabe. Bitte geben Sie 6 Zahlen zwischen 1 und 42 ein.")
+                                
+                        if len(lotto_tipp) != 6 or any(zahl < 1 or zahl > 42 for zahl in lotto_tipp):
+                                print("Ungültige Eingabe. Bitte geben Sie 6 Zahlen zwischen 1 und 42 ein.")
+                                
+                        richtige_zahlen = set(lotto_zahlen) & set(lotto_tipp)
+                        print("Die gezogenen Lottozahlen sind:", lotto_zahlen)
+                        print("Ihre richtigen Zahlen sind:", list(richtige_zahlen))
+                        print("Anzahl der richtigen Zahlen:", len(richtige_zahlen))
+                elif projekt_wahl == "3":
+                        print("Programm wird beendet.")
+                        break
+                else:
+                        print("Ungültige Projektauswahl. Bitte wählen Sie 1 oder 2.")
+                        
+main()

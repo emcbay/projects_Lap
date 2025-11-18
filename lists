@@ -1,0 +1,21 @@
+# Aufgabe 1
+temperaturen = [18,21,19,22,20,18,17]
+for temp in temperaturen:
+    print("Die Temperatur beträgt " + str(temp) + " Grad Celsius.")
+
+# Aufgabe 2
+Durchschnitt = sum(temperaturen) / len(temperaturen)
+print("Die durchschnittliche Temperatur beträgt " + str(Durchschnitt) + " Grad Celsius.")
+
+# Aufgabe 3
+temperaturen.insert(1, 20)
+temperaturen.remove(21)
+
+# Aufgabe 4
+temperaturen.append(20)
+print("Aktualisierte Temperaturen:", temperaturen)
+
+# Aufgabe 5
+max_temp = max(temperaturen)
+min_temp = min(temperaturen)
+print("Die höchste und niedrigste Temperatur sind:", max_temp, "und", min_temp)
